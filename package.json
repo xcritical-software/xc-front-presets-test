@@ -1,0 +1,33 @@
+{
+  "name": "@xcritical/front-presets",
+  "version": "0.0.0",
+  "description": "Frontend Presets for XCritical projects",
+  "main": "index.js",
+  "workspaces": [
+    "xc-*"
+  ],
+  "bolt": {
+    "workspaces": [
+      "xc-*"
+    ]
+  },
+  "scripts": {
+    "test": "exit 0",
+    "lint": "yarn eslint xc-*/src/**/*.{js,jsx,ts,tsx}",
+    "lint:teamcity": "yarn lint --format ./node_modules/eslint-teamcity/index.js",
+    "lint:fix": "yarn lint --fix",
+    "compile": "yarn mono-ci run build",
+    "build": "yarn clean && yarn compile",
+    "pre-deploy": "bash ./copy-to-publish.sh",
+    "deploy": "bash ./publish.sh",
+    "check": "npm run lint && npm run test",
+    "clean": "rimraf dist lib .publish"
+  },
+  "repository": "https://bitbucket.org/xcritical/xc-front-presets.git",
+  "author": "Xcritical Software",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@xcritical/mono-ci": "^0.0.5"
+  }
+}

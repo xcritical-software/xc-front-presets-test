@@ -1,0 +1,47 @@
+{
+  "name": "@xcritical/xc-front-libs-utils",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "lint:teamcity": "exit 0",
+    "compile": "bash ./compile.sh",
+    "build": "npm run clean && mkdir .publish && npm run compile",
+    "deploy": "npm publish",
+    "check": "npm run lint && npm run test",
+    "clean": "rimraf dist lib .publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/xcritical/xc-front-kit.git"
+  },
+  "keywords": [
+    "design system",
+    "library"
+  ],
+  "author": "123Software",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/xcritical/xc-front-kit#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "private": false,
+  "devDependencies": {
+    "babel-plugin-react-transform": "^3.0.0",
+    "event-stream": "^4.0.1",
+    "mkdirp": "^0.5.1",
+    "rimraf": "^2.6.2"
+  },
+  "dependencies": {
+    "@xcritical/xc-front-babel": "^1.0.0",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-clone": "^2.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-typescript": "^5.0.1",
+    "merge2": "^1.2.4",
+    "rimraf": "^2.6.2",
+    "through2": "^3.0.0",
+    "typescript": "3.5.3",
+    "vinyl": "^2.2.0"
+  }
+}

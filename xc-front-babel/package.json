@@ -1,0 +1,96 @@
+{
+  "name": "@xcritical/xc-front-babel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "exit 0",
+    "lint": "exit 0",
+    "lint:teamcity": "exit 0",
+    "lint:fix": "exit 0",
+    "compile": "bash ./compile.sh",
+    "build": "npm run clean && mkdir .publish && npm run compile",
+    "deploy": "npm publish",
+    "check": "npm run lint && npm run test",
+    "clean": "rimraf dist lib .publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/xcritical/xc-front-presets.git"
+  },
+  "keywords": [
+    "babel",
+    "library"
+  ],
+  "author": "123Software",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/xcritical/xc-front-presets/src/develop/xc-front-babel#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "eslint-teamcity": {
+    "reporter": "inspections",
+    "report-name": "ESLint Violations",
+    "error-statistics-name": "ESLint Error Count",
+    "warning-statistics-name": "ESLint Warning Count"
+  },
+  "private": false,
+  "devDependencies": {
+    "prettier": "^1.16.4",
+    "rimraf": "^2.6.2"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/plugin-proposal-class-properties": "^7.3.4",
+    "@babel/plugin-proposal-decorators": "^7.3.0",
+    "@babel/plugin-proposal-do-expressions": "^7.2.0",
+    "@babel/plugin-proposal-export-default-from": "^7.2.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.2.0",
+    "@babel/plugin-proposal-function-bind": "^7.2.0",
+    "@babel/plugin-proposal-function-sent": "^7.2.0",
+    "@babel/plugin-proposal-json-strings": "^7.2.0",
+    "@babel/plugin-proposal-logical-assignment-operators": "^7.2.0",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.2.0",
+    "@babel/plugin-proposal-numeric-separator": "^7.2.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.2.0",
+    "@babel/plugin-proposal-pipeline-operator": "^7.3.2",
+    "@babel/plugin-proposal-throw-expressions": "^7.2.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-syntax-import-meta": "^7.2.0",
+    "@babel/plugin-transform-regenerator": "^7.3.4",
+    "@babel/plugin-transform-runtime": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/runtime": "^7.3.4",
+    "babel-plugin-lodash": "^3.3.4",
+    "babel-plugin-styled-components": "^1.10.0"
+  },
+  "peerDependencies": {
+    "@babel/cli": ">= 7.2.3",
+    "@babel/core": ">= 7.3.4",
+    "@babel/plugin-proposal-class-properties": ">= 7.3.4",
+    "@babel/plugin-proposal-decorators": ">= 7.3.0",
+    "@babel/plugin-proposal-do-expressions": ">= 7.2.0",
+    "@babel/plugin-proposal-export-default-from": ">= 7.2.0",
+    "@babel/plugin-proposal-export-namespace-from": ">= 7.2.0",
+    "@babel/plugin-proposal-function-bind": ">= 7.2.0",
+    "@babel/plugin-proposal-function-sent": ">= 7.2.0",
+    "@babel/plugin-proposal-json-strings": ">= 7.2.0",
+    "@babel/plugin-proposal-logical-assignment-operators": ">= 7.2.0",
+    "@babel/plugin-proposal-nullish-coalescing-operator": ">= 7.2.0",
+    "@babel/plugin-proposal-numeric-separator": ">= 7.2.0",
+    "@babel/plugin-proposal-optional-chaining": ">= 7.2.0",
+    "@babel/plugin-proposal-pipeline-operator": ">= 7.3.2",
+    "@babel/plugin-proposal-throw-expressions": ">= 7.2.0",
+    "@babel/plugin-syntax-dynamic-import": ">= 7.2.0",
+    "@babel/plugin-syntax-import-meta": ">= 7.2.0",
+    "@babel/plugin-transform-regenerator": ">= 7.3.4",
+    "@babel/plugin-transform-runtime": ">= 7.3.4",
+    "@babel/preset-env": ">= 7.3.4",
+    "@babel/preset-react": ">= 7.0.0",
+    "@babel/runtime": ">= 7.3.4",
+    "babel-plugin-lodash": ">= 3.3.4",
+    "babel-plugin-styled-components": ">= 1.10.0"
+  }
+}
