@@ -20,7 +20,7 @@ stages:
 jobs:
   include:
     - stage: lint
-      script: yarn lint & yarn test
+      script: yarn lint && yarn test
     - stage: build
       script: yarn build
     - stage: next-version
