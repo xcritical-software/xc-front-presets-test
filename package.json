@@ -16,7 +16,7 @@
     "lint": "yarn eslint xc-*/src/**/*.{js,jsx,ts,tsx}",
     "lint:teamcity": "yarn lint --format ./node_modules/eslint-teamcity/index.js",
     "lint:fix": "yarn lint --fix",
-    "compile": "yarn mono-ci run build",
+    "compile": "yarn boltify run build",
     "build": "yarn clean && yarn compile",
     "pre-deploy": "bash ./copy-to-publish.sh",
     "deploy": "bash ./publish.sh",
@@ -28,6 +28,6 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
-    "@xcritical/mono-ci": "^0.0.5"
+    "boltify": "^1.0.3"
   }
 }
