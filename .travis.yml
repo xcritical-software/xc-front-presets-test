@@ -14,16 +14,13 @@ before_install:
 install: yarn install --no-progress
 stages:
   - lint
-  - test
   - build
   - name: next-version
     if: branch = master AND type = push
 jobs:
   include:
     - stage: lint
-      script: yarn lint
-    - stage: test
-      script: yarn test
+      script: yarn lint & yarn test
     - stage: build
       script: yarn build
     - stage: next-version
