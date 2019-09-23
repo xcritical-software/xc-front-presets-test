@@ -13,8 +13,8 @@ before_install:
   - export PATH="$HOME/.yarn/bin:$PATH"
 install: yarn install --no-progress
 stages:
-  - lint
-  - build
+#  - lint
+#  - build
   - name: next-version
     if: branch = master AND type = push
 jobs:
@@ -30,10 +30,12 @@ jobs:
         - git config --local user.name "TravisCI"
         - git config --local user.email "frontend@xcritical.software"
         - git fetch --tags --force
-        - git tag
+        - git remote add origin-master https://${GH_TOKEN}@github.com/xcritical-software/xc-front-presets-test.git > /dev/null 2>&1
+      after_deploy:
+        - git push origin-master --tags
       deploy:
         provider: script
-        script: yarn boltify versions
+        script: yarn boltify versions --no-push
         skip_cleanup: true
         on:
           branch: master
