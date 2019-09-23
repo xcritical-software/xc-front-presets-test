@@ -12,8 +12,29 @@ before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.17.3
   - export PATH="$HOME/.yarn/bin:$PATH"
 install: yarn install --no-progress
+stages:
+  - lint
+  - test
+  - build
+  - name: next-version
+    if: branch = master AND type = push
 jobs:
   include:
+    - stage: lint
+      script: yarn lint
+    - stage: test
+      script: yarn test
     - stage: build
-      if: branch = master AND type = push
       script: yarn build
+    - stage: next-version
+      script: skip
+      if: branch = master AND type = push
+      before_deploy:
+        - git config --local user.name "TravisCI"
+        - git config --local user.email "frontend@xcritical.software"
+      deploy:
+        provider: script
+        script: yarn boltify versions
+        skip_cleanup: true
+        on:
+          branch: master
