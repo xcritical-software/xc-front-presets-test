@@ -32,6 +32,8 @@ jobs:
       before_deploy:
         - git config --local user.name "TravisCI"
         - git config --local user.email "frontend@xcritical.software"
+        - git fetch --tags --force
+        - git tag
       deploy:
         provider: script
         script: yarn boltify versions
