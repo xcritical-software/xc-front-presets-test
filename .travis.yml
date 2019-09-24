@@ -27,7 +27,7 @@ jobs:
       before_deploy:
         - git config --local user.name "TravisCI"
         - git config --local user.email "frontend@xcritical.software"
-        #- git fetch --tags --force
+        - git fetch --tags --force
         - git remote add origin-master https://${GH_TOKEN}@github.com/xcritical-software/xc-front-presets-test.git > /dev/null 2>&1
       after_deploy:
         - git push origin-master --tags
