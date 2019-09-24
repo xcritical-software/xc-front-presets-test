@@ -19,8 +19,8 @@ stages:
     if: branch = master AND type = push
 jobs:
   include:
-    - stage: lint
-      script: yarn lint && yarn test && yarn build
+    #- stage: lint
+    #  script: yarn lint && yarn test && yarn build
     - stage: next-version
       script: skip
       if: branch = master AND type = push
@@ -29,8 +29,10 @@ jobs:
         - git config --local user.email "frontend@xcritical.software"
         - git fetch --tags --force
         - git remote add origin-master https://${GH_TOKEN}@github.com/xcritical-software/xc-front-presets-test.git > /dev/null 2>&1
+        - git tag
       after_deploy:
         - git push origin-master --tags
+        - git tag
       deploy:
         provider: script
         script: yarn boltify versions --no-push
