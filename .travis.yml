@@ -31,11 +31,12 @@ jobs:
         - git remote add origin-master https://${GH_TOKEN}@github.com/xcritical-software/xc-front-presets-test.git > /dev/null 2>&1
         - git tag
       after_deploy:
-        - git push origin-master --tags
-        - git tag
+        - git show-ref --tags
+        - git log HEAD~10..HEAD
+        - git push origin-master master && git push --tags origin-master master
       deploy:
         provider: script
-        script: yarn boltify versions --no-push
+        script: yarn boltify version --git-remote origin-master --loglevel silly
         skip_cleanup: true
         on:
           branch: master
