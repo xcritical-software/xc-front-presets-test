@@ -16,14 +16,14 @@ stages:
 #  - lint
 #  - build
   - name: next-version
-    if: branch = master AND type = push AND commit_message !~ /(publish)/
+    if: branch = master AND type = push AND commit_message !~ /(release)/
 jobs:
   include:
     #- stage: lint
     #  script: yarn lint && yarn test && yarn build
     - stage: next-version
       script: skip
-      if: branch = master AND type = push AND commit_message !~ /(publish)/
+      if: branch = master AND type = push AND commit_message !~ /(release)/
       before_deploy:
         - git config --local user.name "TravisCI"
         - git config --local user.email "frontend@xcritical.software"        
