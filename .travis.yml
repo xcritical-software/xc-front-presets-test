@@ -32,6 +32,7 @@ jobs:
         - git tag
       after_deploy:
         - git tag
+        - git log --name-status HEAD^..HEAD
       deploy:
         provider: script
         script: yarn boltify version --git-remote origin-master --loglevel silly
