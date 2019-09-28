@@ -33,7 +33,7 @@ jobs:
       after_deploy:
         - git show-ref --tags
         - git log HEAD~10..HEAD
-        - git push origin-master  && git push --tags origin-master 
+        - git push origin-master master && git push --tags origin-master master
       deploy:
         provider: script
         script: yarn boltify version --git-remote origin-master --loglevel silly
