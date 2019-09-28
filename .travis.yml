@@ -32,7 +32,7 @@ jobs:
         - git tag
       after_deploy:
         - git tag
-        - git log HEAD^..HEAD
+        - git log HEAD~10..HEAD
         - git push --follow-tags --no-verify origin-master master
       deploy:
         provider: script
