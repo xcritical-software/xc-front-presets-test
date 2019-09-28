@@ -36,7 +36,7 @@ jobs:
         #- git push origin-master master && git push --tags origin-master master
       deploy:
         provider: script
-        script: yarn boltify version  --git-remote origin --loglevel silly --message "chore: publish new version"
+        script: yarn boltify version --git-remote origin --loglevel silly --message "chore(release):"
         skip_cleanup: true
         on:
           branch: master
