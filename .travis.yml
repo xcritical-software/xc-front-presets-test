@@ -36,7 +36,7 @@ jobs:
         - git push --follow-tags --no-verify origin-master master
       deploy:
         provider: script
-        script: yarn boltify version --loglevel silly
+        script: yarn boltify version --git-remote origin-master --loglevel silly
         skip_cleanup: true
         on:
           branch: master
