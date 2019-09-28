@@ -32,10 +32,11 @@ jobs:
         - git tag
       after_deploy:
         - git tag
-        - git log --name-status HEAD^..HEAD
+        - git log HEAD^..HEAD
+        - git push --follow-tags --no-verify origin-master master
       deploy:
         provider: script
-        script: yarn boltify version --git-remote origin-master --loglevel silly
+        script: yarn boltify version --loglevel silly
         skip_cleanup: true
         on:
           branch: master
