@@ -16,7 +16,7 @@ stages:
 #  - lint
 #  - build
   - name: next-version
-    if: branch = master AND type = push
+    if: branch = master AND type = push AND commit_message !~ /(publish)/
 jobs:
   include:
     #- stage: lint
