@@ -31,7 +31,7 @@ jobs:
         - git remote add origin-master https://${GH_TOKEN}@github.com/xcritical-software/xc-front-presets-test.git > /dev/null 2>&1
         - git tag
       after_deploy:
-        - git tag
+        - git show-ref --tags
         - git log HEAD~10..HEAD
         - git push --follow-tags --no-verify origin-master master
       deploy:
