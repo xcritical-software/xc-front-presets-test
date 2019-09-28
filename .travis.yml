@@ -23,7 +23,7 @@ jobs:
     #  script: yarn lint && yarn test && yarn build
     - stage: next-version
       script: skip
-      if: branch = master AND type = push
+      if: branch = master AND type = push AND commit_message !~ /(publish)/
       before_deploy:
         - git config --local user.name "TravisCI"
         - git config --local user.email "frontend@xcritical.software"        
@@ -36,7 +36,7 @@ jobs:
         #- git push origin-master master && git push --tags origin-master master
       deploy:
         provider: script
-        script: yarn boltify version --git-remote origin --loglevel silly
+        script: yarn boltify version  --git-remote origin --loglevel silly --message "chore: publish new version"
         skip_cleanup: true
         on:
           branch: master
