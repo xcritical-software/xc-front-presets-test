@@ -2117,10 +2117,10 @@ bolt@^0.23.6:
     typeable-promisify "^2.0.1"
     yarn "^1.9.4"
 
-boltify@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/boltify/-/boltify-1.1.0.tgz#0fb0b24eed54d7ab085e19600e0016acd6ee4072"
-  integrity sha512-wqTZ6FOWaIwhNaOWSFgL6S7ZJkx0UDYwp+sjzjlIgjNt0b2hKqmKif+NgIrXGBFCfAmyaw8dEUXQ/0Gqvyx+Fg==
+boltify@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/boltify/-/boltify-1.1.1.tgz#5f631289f9ef795cc9fc86287c8fa543c9b9113a"
+  integrity sha512-0VsnnyzjSY8sUQbrAiem0sLtg+C3dRMNfoXJFMK9vNQtUT9sRgzfxUyNrHUG/m/cCphhzPRBSZIahEvfIjP5AA==
   dependencies:
     bolt "^0.23.6"
     chalk "^2.4.2"

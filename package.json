@@ -28,6 +28,6 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
-    "boltify": "^1.1.0"
+    "boltify": "^1.1.1"
   }
 }
