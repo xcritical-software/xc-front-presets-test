@@ -30,6 +30,7 @@ jobs:
         - git remote set-url origin https://${GH_TOKEN}@github.com/xcritical-software/xc-front-presets-test.git > /dev/null 2>&1
         - git fetch --tags --force
         - git checkout master
+        - git pull
       deploy:
         provider: script
         script: yarn boltify version --loglevel silly --message "chore(release):"
