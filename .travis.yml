@@ -33,7 +33,7 @@ jobs:
         - git pull
       deploy:
         provider: script
-        script: yarn boltify version --loglevel silly
+        script: yarn boltify version --loglevel silly --message "chore(release):"
         skip_cleanup: true
         on:
           branch: master
