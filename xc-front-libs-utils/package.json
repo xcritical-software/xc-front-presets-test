@@ -1,6 +1,6 @@
 {
 	"name": "@xcritical/xc-front-libs-utils",
-	"version": "1.0.2",
+	"version": "1.0.1",
 	"description": "",
 	"scripts": {
 		"lint:teamcity": "exit 0",
